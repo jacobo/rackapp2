@@ -1,0 +1,4 @@
+dependencies:
+  pre:
+    - ruby -ropenssl -e 'puts OpenSSL::OPENSSL_VERSION'
+    - ruby -e "require 'net/https'; http = Net::HTTP.new('engine-yard-inc.chargify.com',443); http.use_ssl = true; puts http.get('/',{}).body"
